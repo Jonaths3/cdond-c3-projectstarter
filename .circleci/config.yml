@@ -223,7 +223,7 @@ jobs:
           command: |
             # your code here
             apk add --update ansible
-            yum install -y tar gzip
+            apt-get install tar -y
       - run:
           name: Get backend url
           command: |
