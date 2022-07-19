@@ -223,7 +223,7 @@ jobs:
           name: Install dependencies
           command: |
             # your code here
-            apk add --update ansible
+            yum install ansible -y
       - run:
           name: Get backend url
           command: |
