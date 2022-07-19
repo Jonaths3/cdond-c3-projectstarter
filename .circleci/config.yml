@@ -220,10 +220,10 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: yum update -y
-      - run: yum install epel-release -y
       - run:
           name: Install dependencies
           command: |
+            yum install epel-release -y
             yum install ansible -y
       - run:
           name: Get backend url
