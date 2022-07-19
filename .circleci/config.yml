@@ -218,12 +218,12 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/
+      - run: yum install -y tar gzip
       - run:
           name: Install dependencies
           command: |
             # your code here
             apk add --update ansible
-            apt-get install tar -y
       - run:
           name: Get backend url
           command: |
