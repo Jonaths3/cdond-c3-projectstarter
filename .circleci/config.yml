@@ -216,11 +216,11 @@ jobs:
     steps:
       # Checkout code from git
       - checkout
-      - run: yum install -y tar gzip
       - run: npm install
       - attach_workspace:
           at: ~/
-      - run: yum update -y
+      - run: npm i gzip
+      - run: npm i tar
       - run:
           name: Get backend url
           command: |
