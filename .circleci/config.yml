@@ -243,7 +243,7 @@ jobs:
   deploy-backend:
     docker:
       # Docker image here that supports Ansible
-      - image: sleavely/node-awscli:14.x
+      - image: bmcom/ansible-ppc64le
     steps:
       - checkout
       # Add ssh keys with fingerprint
