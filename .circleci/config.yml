@@ -285,19 +285,15 @@ jobs:
       - run: apk add --update curl
       - run: apk add --no-cache aws-cli
       - run:
-          name: Get backend url
+          name: Backend smoke test.
           command: |
-            # Fetch and prepare the BACKEND_IP env var
+             # Fetch and prepare the BACKEND_IP env var
             export BACKEND_IP=$(aws ec2 describe-instances \
                 --query 'Reservations[*].Instances[*].PublicIpAddress' \
                 --output text)
             export API_URL="https://${BACKEND_IP}:3030"
             echo "API_URL = ${API_URL}"
             echo ${API_URL}
-            echo "${API_URL}/api/status"
-      - run:
-          name: Backend smoke test.
-          command: |
             echo "${API_URL}/api/status"
             if curl "${API_URL}/api/status" | grep "ok"
             then
