@@ -27,9 +27,9 @@ commands:
             SUCCESS = 1
             if(( $SUCCESS==1 )); 
             then
-            #  cd ~/project/backend
-            #  npm install
-            #  npm run migration:revert
+             cd ~/project/backend
+             npm install
+             npm run migration:revert
             fi
             
 jobs:
