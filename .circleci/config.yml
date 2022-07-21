@@ -293,11 +293,12 @@ jobs:
                 --output text)
             export API_URL="https://${BACKEND_IP}:3030"
             echo "API_URL = ${API_URL}"
+            echo ${API_URL}
       - run:
           name: Backend smoke test.
           command: |
             echo "${API_URL}"
-            if curl "http://3.93.216.112:3030/api/status" | grep "ok"
+            if curl "${API_URL}/api/status" | grep "ok"
             then
                 return 0
             else
