@@ -284,11 +284,15 @@ jobs:
       - checkout
       - run: apk add --update curl
       - run:
+          name: Get backend url
+          command: |
+            # Fetch and prepare the BACKEND_IP env var
+            export API_URL="http://${BACKEND_IP}:3030"
+            echo "${API_URL}"
+      - run:
           name: Backend smoke test.
           command: |
-            API_URL="http://${BACKEND_IP}:3030"
-            echo ${API_URL}
-            if curl ${API_URL}/api/status | grep "ok"
+            if curl "${API_URL}/api/status" | grep "ok"
             then
                 return 0
             else
