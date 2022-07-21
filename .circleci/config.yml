@@ -252,9 +252,7 @@ jobs:
       # attach workspace
       - attach_workspace:
           at: ~/
-      - run: apt install curl
-      - run: curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-      - run: apt-get install -y nodejs
+      - run: apk add --update npm
       - run: npm i gzip
       - run: npm i tar
       - run:
