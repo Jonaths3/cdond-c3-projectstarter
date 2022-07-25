@@ -1,13 +1,10 @@
 ---
-- name: npm Install
-  become: true
-  raw: npm install
+- name: "Extract artifact to EC2"
+  unarchive:
+    src: ~/project/artifact.tar.gz
+    dest: /home/ubuntu
 
-- name: "pm2 stop default"
-  become: true
-  raw: pm stop default
-
-- name: "pm2 start npm -- start."
-  become: true
-  raw: sudo pm2 start npm -- start
+- name: "Start application"
+  command:
+    cmd: pm2 start npm -- start
   
