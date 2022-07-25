@@ -11,6 +11,10 @@
   become: true
   raw: sudo apt install -y nodejs npm
 
-- name: "install pm2."
-  become: true
-  raw: sudo npm install pm2 -y
+- name: "install pm2"
+    become: yes
+    npm:
+      name: pm2
+      global: yes
+      production: yes
+      state: present
