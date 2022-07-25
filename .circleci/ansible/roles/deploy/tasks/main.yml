@@ -1,7 +1,7 @@
 ---
 - name: npm Install
   become: true
-    raw: npm install
+  raw: npm install
 
 - name: "pm2 stop default"
   become: true
