@@ -1,10 +1,13 @@
 ---
 - name: npm Install
+  become: true
     raw: npm install
 
 - name: "pm2 stop default"
+  become: true
     raw: pm2 stop default
 
 - name: "pm2 start npm -- start."
+  become: true
     raw: sudo pm2 start npm -- start
   
