@@ -5,9 +5,9 @@
 
 - name: "pm2 stop default"
   become: true
-  raw: pm2 stop default
+  raw: pm stop default
 
 - name: "pm2 start npm -- start."
   become: true
-  raw: sudo pm2 start npm -- start
+    raw: sudo pm2 start npm -- start
   

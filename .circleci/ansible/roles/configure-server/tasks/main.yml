@@ -2,9 +2,7 @@
 - name: Install Python
   become: true
   raw: sudo apt install -y python3
-    
-
-
+  
 - name: "update packages"
   become: true
   raw: sudo apt update -y
