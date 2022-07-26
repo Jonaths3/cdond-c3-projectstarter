@@ -6,5 +6,5 @@
 
 - name: "Start application"
   command:
-    cmd: pm2 start npm -- start
+    cmd: sudo pm2 start npm -- start
   
