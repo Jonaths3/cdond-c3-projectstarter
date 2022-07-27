@@ -5,6 +5,7 @@
     dest: /home/ubuntu
 
 - name: "Start application"
-  command:
-    cmd: sudo pm2 start npm -- start
+  shell: |
+    npm install -f
+    pm2 start npm -- start -f
   
