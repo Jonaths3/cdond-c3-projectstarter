@@ -209,8 +209,9 @@ jobs:
           command: |
             if grep -q "has been executed successfully." ~/project/backend/migrations_dump.txt
             then
+                echo "-------migration done with kvdb......"
                 # If you are using kvdb.io, generate the bucket ID "KGUXMwPaSdC8QBRGYEE1z8" in your local terminal first
-                curl https://kvdb.io/KGUXMwPaSdC8QBRGYEE1z8/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1' -k
+                curl https://kvdb.io/KGUXMwPaSdC8QBRGYEE1z8/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
             fi
       - destroy-environment       
      
