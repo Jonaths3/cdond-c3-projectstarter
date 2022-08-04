@@ -24,10 +24,9 @@ commands:
           name: Revert migrations
           when: on_fail
           command: |
-            SUCCESS=$(curl --insecure  https://kvdb.io/PKw3imANHwzPqjsfmpYct5/migration_${CIRCLE_WORKFLOW_ID:0:7})
-            SUCCESS = 1
-            echo "success is $SUCCESS"
-            if(( $SUCCESS==1 )); 
+            URL="https://kvdb.io/PKw3imANHwzPqjsfmpYct5/migration_${CIRCLE_WORKFLOW_ID:0:7}"
+            echo ${URL} 
+            if curl --insecure ${URL} | grep "1"
             then
              echo ".........success is 1........"
              cd ~/project/backend
